@@ -1,6 +1,6 @@
 .botao {
     align-self: center;
-    background-color: #88bcd1;
+    background-color: #92c6db;
     border-radius: 10px;
     box-shadow: 2px 4px 4px #0000009F;
     color: #272626;
@@ -8,6 +8,10 @@
     font-size: 1.25rem;
     padding: 16px;
     width: 150px;
+
+    &:hover{
+      background-color: #88bcd1;
+    }
     
     &:active {
       background-color: #7CA6B7;
