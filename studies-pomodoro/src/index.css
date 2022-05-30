@@ -102,3 +102,38 @@ select {
 	font-weight: inherit;
 	font-family: inherit;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Manjari&display=swap');
+
+body {
+	display: flex;
+	justify-content: center;
+	font-family: 'Manjari', sans-serif;
+	color: #F0F0F0;
+	background-color: #4C4C4C;
+	height: 100%;
+	width: 100%;
+	padding: 16px;
+	box-sizing: border-box;
+}
+
+#root {
+	width: 100%;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: unset;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
