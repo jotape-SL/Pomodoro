@@ -1,10 +1,12 @@
 import React from 'react';
-import Formulario from './components/Formulario/Formulario'
+import Formulario from './components/Formulario/Formulario';
+import Lista from './components/Lista/Lista';
 
 function App() {
   return (
     <div className="App">
       <Formulario/>
+      <Lista/>
     </div>
   );
 }
