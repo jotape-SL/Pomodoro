@@ -1,7 +1,7 @@
 import style from './Relogio.module.scss';
 
 interface Props {
-  tempo:number | undefined
+  tempo: number | undefined
 }
 
 function Relogio({tempo = 0} : Props) {
