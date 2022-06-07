@@ -1,43 +1,40 @@
-import React  from 'react'
+import React, { useState }  from 'react'
 import { Itarefa } from '../../types/tarefas';
 import Botao  from '../Botao/Botao';
 import style from './Formulario.module.scss';
 import {v4 as uuidv4} from "uuid";
 
-export class Formulario extends React.Component <{setTarefas: React.Dispatch<React.SetStateAction<Itarefa[]>>
-}> { 
-    state = {
-        tarefa:"",
-        tempo:"00:00",        
-    };
+interface Props{
+    setTarefas: React.Dispatch<React.SetStateAction<Itarefa[]>>
+}
 
-    adicionarTarefa(evento:React.FormEvent<HTMLFormElement>) {
+function Formulario({setTarefas}: Props ){
+    const [tarefa, setTarefa] = useState("")
+    const [tempo, setTempo] = useState("00:00")
+    function adicionarTarefa(evento:React.FormEvent<HTMLFormElement>) {
         evento.preventDefault();
-        this.props.setTarefas(tarefasAntigas => 
+        setTarefas(tarefasAntigas => 
             [...tarefasAntigas, 
             {
-                ...this.state,
+                tarefa,
+                tempo,
                 selecionado: false,   
                 completado: false,
                 id: uuidv4()
-            }])
-        this.setState({
-            tarefa:"",
-            tempo:"00:00"
-        })
+            }]);
+        setTarefa("");
+        setTempo("00:00");
     }
-
-  render() {
     return (
-        <form className={style.novaTarefa} onSubmit={this.adicionarTarefa.bind(this)}>
+        <form className={style.novaTarefa} onSubmit={adicionarTarefa}>
             <div className={style.inputContainer}>
-                <label htmlFor="tarega">Adicione um novo estudo</label>
+                <label htmlFor="tarefa">Adicione um novo estudo</label>
                 <input 
                     type="text"
                     name='tarefa'
                     id='tafera' 
-                    value={this.state.tarefa}
-                    onChange={evento => this.setState({...this.state, tarefa: evento.target.value})}
+                    value={tarefa}
+                    onChange={evento => setTarefa(evento.target.value)}
                     placeholder='O que voce quer estudar'
                     required
                 />
@@ -49,10 +46,10 @@ export class Formulario extends React.Component <{setTarefas: React.Dispatch<Rea
                     step="1"
                     name='tepo'
                     id='tempo'
-                    value={this.state.tempo}
-                    onChange={evento => this.setState({...this.state, tempo: evento.target.value})}
+                    value={tempo}
+                    onChange={evento => setTempo(evento.target.value)}
                     min="00:00:00"
-                    max="05:00:00"
+                    max="01:40:00"
                     required
                 />
             </div>
@@ -61,7 +58,6 @@ export class Formulario extends React.Component <{setTarefas: React.Dispatch<Rea
             </Botao>
         </form>
     )
-  }
 }
 
-export default Formulario
+export default Formulario;  
