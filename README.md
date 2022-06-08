@@ -38,7 +38,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 
 - **[HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)**
-- **[CSS](https://www.w3.org/Style/CSS/Overview.en.html)**
+- **[CSS](https://developer.mozilla.org/pt-BR/docs/Web/CSS)**
 - **[Sass](https://sass-lang.com/documentation/)**
 - **[TypeScript](https://www.typescriptlang.org/docs/)**
 
