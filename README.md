@@ -37,7 +37,7 @@ $npm start
 As seguintes ferramentas foram usadas na construção do projeto:
 
 
-- **[HTML](https://www.w3.org/html/)**
+- **[HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)**
 - **[CSS](https://www.w3.org/Style/CSS/Overview.en.html)**
 - **[Sass](https://sass-lang.com/documentation/)**
 - **[TypeScript](https://www.typescriptlang.org/docs/)**
